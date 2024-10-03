@@ -1,0 +1,50 @@
+{
+    "main": [
+        {
+            "title": "Inicio",
+            "link": "#page-head"
+        },
+        {
+            "title": "Acerca de",
+            "link": "#acerca"
+        },
+        {
+            "title": "Servicios",
+            "link": "#servicios"
+        },
+        {
+            "title": "Contacto",
+            "link": "#contacto"
+        }
+       
+    ],
+    "servicios": [
+        {
+          "title": "Control de Medicamentos",
+          "link": "#",
+          "img":"/assets/images/enfermeras_control.webp"
+        },
+        {
+          "title": "Canalizar",
+           "link": "#",
+           "img":"/assets/images/enfermeras_canalizar.webp"
+        },
+        {
+          "title": "Aspiración de flemas",
+           "link": "#",
+           "img":"/assets/images/aspiracion-de-flemas.webp"
+        },
+        {
+          "title": "Registro de signos vitales",
+           "link": "#",
+           "img":"assets/images/registro-signos-vitales.webp"
+        },
+        {
+          "title": "Curación de herida",
+           "link": "#",
+           "img":"/assets/images/enfermeras_curacion.webp"
+        }
+        
+        
+      ]
+}

@@ -1,0 +1,19 @@
+---
+import IcOutlineEmail from "./icons/IcOutlineEmail.astro";
+import IcOutlineWhatsapp from "./icons/IcOutlineWhatsapp.astro";
+
+export interface Props {
+	
+	
+    url?: string;
+    class?:string;
+}
+
+
+const { url , class: className, ...props } = Astro.props;
+---
+
+<ul class:list={[className]}>
+  <li><a href=""><IcOutlineWhatsapp /></a></li>
+  <li><a href=""> <IcOutlineEmail /></a></li>
+</ul>

@@ -1,0 +1,55 @@
+{
+    "site": [
+        {
+            "sitename":"Enfermeras y Cuidadoras CDMX",
+            "slogan": " UNA CARICIA EN EL ALMA ",
+            "description": "Cuidados de enfermería especializados como dializar, canalizar, aspiración de flemas, alimentación por sonda, curación de heridas, ayuda en terapias, verificación de signos vitales, colostomía, nebulizaciones y vaporizaciones, aplicación de inyecciones",
+            "address": "Ciudad de México",
+            "city": "CDMX",
+            "domain": "enfermerasycuidadoras.com.mx",
+            "twitter_site": "@iconmedios",
+            "image_site": "/images/social.jpg",
+            "email":"cuidarte.cuidamosloquemasamas@gmail.com"
+
+        }
+    ], 
+
+    "contact": [
+        {
+            "name": "55 3381 7198",
+            "url": "tel:5533817198",
+            "icon": "phone-in-talk-outline"
+        }
+      
+    ],
+    "whatsapp":[
+        {
+            "name": "WhatsApp",
+            "url": "https://wa.me/5215533817198",
+            "icon": "baseline-whatsapp"
+        }
+       
+    ],
+    "social": [
+        {
+            "red": "Facebook",
+            "url": "https://www.facebook.com/profile.php?id=100090299374018",
+            "icon": "circle_facebook"
+        },
+        {
+            "red": "Email",
+            "url": "mailto:cuidarte.cuidamosloquemasamas@gmail.com",
+            "icon": "circle_linkedin"
+        },
+        {
+            "red": "Linkedin",
+            "url": "mailto:cuidarte.cuidamosloquemasamas@gmail.com",
+            "icon": "circle_linkedin"
+        }
+    ]
+}
+
+
+
+
+

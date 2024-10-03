@@ -1,0 +1,63 @@
+---
+import LayoutHome from "@layouts/LayoutHome.astro";
+import { site } from "@lib/site.json"
+import { servicios } from "@lib/menus.json"
+import {cover, info } from '@lib/images'
+
+
+const title = site[0].sitename
+const desc = site[0].description
+const hx1 = "Cuidados Especializados de Enfermería "
+const seo = {
+  title: hx1,
+  description: desc,
+};
+---
+
+<LayoutHome {seo} bgimg={cover} titlepage={hx1} subtitle="Atención a personas de la tercera edad, cuidado en casa, hospital y asilo." >
+
+  <section id="acerca" class="py-16 bg-gradient-to-r from-brand-300 via-10%  to-brand-500 ">
+    <div class="container text-white/80">
+      <div class="grid lg:grid-cols-2 ic gap-16">
+        <div class="text-center">
+          <img class="w-80% mx-auto lg:w-full" src={info} alt={title} >
+        </div>
+        <div class="grid gap-8">
+          <span class="text-md">Nuestros Servicios:</span>
+          <div>
+            <h3>Enfermeras</h3> 
+            <p>Cuidados de enfermería especializados como dializar, canalizar, aspiración de flemas, alimentación por sonda, curación de heridas, ayuda en terapias, verificación de signos vitales, colostomía, nebulizaciones y vaporizaciones, aplicación de inyecciones, etcétera.</p>
+          </div>
+          <div>
+
+            <h3>Cuidadoras</h3>
+            <p>Aseo del paciente y su medicación vía oral, manejo de oxígeno y todos los cuidados generales.</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="servicios">
+    <div class="centermin text-center flex flex-col gap-4">
+      <h3>Cuidados de enfermería especializados especialistas en geriatría</h3>
+      <span>NUESTROS SERVICIOS</span>
+      <p>Dializar, canalizar, aspiración de flemas, alimentación por sonda, curación de heridas, 
+        ayuda en terapias, verificación de signos vitales, colostomía, 
+        nebulizaciones y vaporizaciones, aplicación de inyecciones</p>
+
+    </div>
+    <div class="container pt-8">
+      <div class="grid gap-4 md:grid-cols-3  lg:grid-cols-5 text-center ">
+       {servicios.map(({title, img})=>(
+        <div>
+          <img class="all600 aspect-ratio-[4/3] bg-zinc-2 hover:scale-110 mb-2 " src={img} alt={title} />
+           <span>{title}</span>
+        </div>
+       ))}
+      </div>
+    </div>
+  </section>
+</LayoutHome>

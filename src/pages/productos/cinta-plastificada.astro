@@ -1,0 +1,54 @@
+---
+import LayoutPage from "@layouts/LayoutPage.astro";
+
+const title = "Cinta Plastificada Decorativa<";
+const desc ="Producto fabricado con polietileno de baja densidad con aditivos UV para resistir la decoloración y desgaste al estar expuesta a la intemperie.";
+const seo = {
+  title: title,
+  description: desc,
+};
+---
+
+<LayoutPage {seo} titlepage={title}>
+    <div class="container">
+        <p><img src="https://grupocepromex.com/imag_cepromex/cintadecor.jpg" /></p>
+        <div>
+          <p>
+            <small
+              >Contamos con el mantenimiento y servicio profesional de malla
+              ciclónica.<br /></small>
+          </p>
+          <div>
+            <p>{desc}</p>
+            <p>
+              Brindándole privacidad y decoración a los cercados de malla ciclónica
+              combinado diseño y seguridad de acuerdo a sus necesidades.
+            </p>
+            <p>
+              Se presenta en colores verde, blanco, gris plata y azul rey, como
+              colores de línea; si requiere un color en especial para su propio
+              diseño, nosotros se lo igualamos.
+            </p>
+            <p>
+              Durante el proceso de instalación de nuestros productos contamos con
+              un equipo altamente calificado que supervisa paso a paso nuestros
+              cercados. Tener más resistencia a la intemperie y excelente calidad.
+            </p>
+            <p>
+              Nuestros productos de alta calidad, son resistentes a todo tipo de
+              climas, por lo que no es necesario contar con un mantenimiento
+              especial. Todos los cercados están garantizados y fueron sometidos a
+              las más severas pruebas de resistencia y durabilidad.
+            </p>
+            <p>contamos con difrentes tamaños y colores.</p>
+          </div>
+        </div>
+        <div>
+          <h2>
+            <img
+              src="https://grupocepromex.com/imag_cepromex/cinta-plastificada.jpg"
+            />
+          </h2>
+        </div>
+      </div>
+</LayoutPage>

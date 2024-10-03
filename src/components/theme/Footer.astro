@@ -1,0 +1,79 @@
+---
+import { servicios, main } from "@lib/menus.json"
+import ContacForm from "@components/theme/ContacForm.astro";
+
+import Link from '../base/LinkFooter.astro';
+import { site } from "@lib/site.json"
+
+import ContactIcons from "@components/ContactIcons.astro";
+
+
+---
+<div class="bg-brand-400 text-center py-6 text-soft-20">
+    <h4 class=" uppercase px-6 "> Atención a personas de la tercera edad, cuidado en casa, hospital y asilo.</h4>
+</div>
+<footer id="footer" class="relative bg-brand-500 text-white/80 ">
+
+
+    <!-- <VideoFull /> -->
+
+
+    <div class="container pt-8 pb-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 py-24">
+            
+            <div>
+                <h6 class="hx4 pb-8">Acerca de</h6>
+                <ul>
+                    {
+                        main.map( ({title, link })=> (
+                            
+                        <li><Link href={link}>{title}</Link></li>
+                        
+                        ))
+                    }
+                </ul>
+                <ContactIcons class="flex mt-8 gap-2 text-8" />
+                <p class="mt-9"> {site[0].address} </p>
+              
+            </div>
+            <div>
+                <h6 class="hx4 pb-8">Productos & Servicios</h6>
+                <ul>
+                    {
+                         servicios.map( ({title, link })=> (
+                            
+                        <li><Link href={link}>{title}</Link></li>
+                        
+                        ))
+                    }
+                </ul>
+               
+               
+            </div>
+            <div class=" ">
+                <h6 class="hx4 pb-8">Contacto</h6>
+                <ContacForm />
+               
+               
+<!--                   
+                <p> Tel: (33) 3366.6920</p>
+                <h6 class="hx4 pb-4">Descarga</h6>
+                <DescargaPres />
+                <Social class="social-footer" /> -->
+
+               
+            </div>
+           
+        </div>
+
+        <!-- <img class="w-full absolute z-3 bottom-0 -mb-2" src={divisortr} alt="separador"> -->
+    </div>
+
+    <div class="bg-brand-300 grid items-center py-8 relative">
+        <p class="text-center px-4">
+            <span class="text-brand-100">ENFERMERAS Y CUIDADORAS </span> | UNA CARICIA EN EL ALMA
+        </p>
+    </div>
+    <!-- <div class="puntos"></div> -->
+</footer>
+

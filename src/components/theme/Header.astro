@@ -1,0 +1,72 @@
+---
+import MainMenu from '@components/theme/Menu.astro';
+import Logo from '@components/theme/Logo.astro';
+import Mobile from './Mobile.astro';
+import ContactIcons from '@components/ContactIcons.astro';
+import IcOutlinePhone from '@components/icons/IcOutlinePhone.astro';
+import { site, contact } from "@lib/site.json"
+
+---
+<header id="navbar">
+	<div class="container ">
+		<Logo class="logo" /> 
+		
+		<div class="sticky:text-orange all400 hidden md:flex gap-4 ic">
+			<a class="flex ic gap-2" href={contact[0].url }> 
+				<span class="text-8 w-8 rounded-full bg-brand-400 p-1 border-2 border-brand-500 text-white ">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+					<path fill="currentColor" d="M6.54 5c.06.89.21 1.76.45 2.59l-1.2 1.2c-.41-1.2-.67-2.47-.76-3.79zm9.86 12.02c.85.24 1.72.39 2.6.45v1.49c-1.32-.09-2.59-.35-3.8-.75zM7.5 3H4c-.55 0-1 .45-1 1c0 9.39 7.61 17 17 17c.55 0 1-.45 1-1v-3.49c0-.55-.45-1-1-1c-1.24 0-2.45-.2-3.57-.57a.84.84 0 0 0-.31-.05c-.26 0-.51.1-.71.29l-2.2 2.2a15.149 15.149 0 0 1-6.59-6.59l2.2-2.2c.28-.28.36-.67.25-1.02A11.36 11.36 0 0 1 8.5 4c0-.55-.45-1-1-1" />
+				</svg>
+				</span>{contact[0].name}</a>
+			<a class=" border-2 border-brand-600 hover:bg-brand-500 hover:text-white rounded-8 py-1 px-4 leading-8 " href="#contacto">CONTACTO</a>
+		</div>
+		<nav class="flex icb gap-4 ">
+			<!-- <div class="fondo-bar"></div>  -->
+			<MainMenu class="navigation" />
+		</nav>
+		<Mobile />
+	</div>	
+</header>
+
+<style is:global>
+	#navbar {
+		@apply fixed z-10 flex items-center w-full top-0 left-0 transition-all h-30 bg-white/10 ;
+	}
+	
+	#navbar .container { 
+		@apply flex items-center justify-between transition-all ;
+	}
+	#navbar.sticky {
+		@apply top-0 bg-zinc-50 h-16 ;
+	}
+	#navbar.sticky.base{ 
+		@apply top-0 bg-white ;
+	 }
+	#navbar.sticky.ocultar{
+		@apply transition-all bg-main-500 top-16 ;
+	}
+	#navbar.sticky .container {
+		@apply transition-all top-16 ;
+	}
+	#navbar a{
+		@apply text-brand-600 hover:opacity-70 ;}
+	#navbar.sticky  a{
+		@apply text-brand-500  ;}
+	#navbar .logo img {
+    @apply all300 h-20 lg:h-22 py-2 w-auto ; 
+    }
+    #navbar.sticky .logo img {
+    @apply all600 h-18;
+    }
+
+	#navbar .navigation{
+       @apply hidden lg:flex gap-4 ;
+    }
+	#navbar .contact{
+		@apply text-soft-40 ;
+	}
+	#navbar .navicons a:hover{
+		@apply text-soft-40/60 ;
+	}
+</style>
+

@@ -1,0 +1,123 @@
+---
+import MainMenu from '@components/theme/Menu.astro';
+
+---
+<button id="button-open" >☰ </button>
+<section id="nav-mobile" class="navleft ">    
+    <div class="p-6">
+        
+        <MainMenu class="mobile-menu" />   
+    
+  
+        <a class="block pt-6 right-4" href="/"> AVISO DE PRIVACIDAD</a>
+    </div>
+ 
+</section>
+
+<style>
+ 
+
+/* RIGHT - LEFT 
+    #nav-mobile {s
+    position: fixed;
+    display: grid;
+    align-items: center; 
+    height: 100vh;
+    width: 80vw ;
+    right: -80vw;
+    top: 0;
+    z-index: 5;
+    overflow: hidden;
+    font-size: 24px;
+   }
+   
+    #nav-mobile.visible {
+
+    right: 0;
+  
+    }
+
+
+    #nav-mobile .content{
+      padding: var(--fs-1);
+    }
+
+   
+
+    
+    #button-open {
+
+       display: grid;
+       align-items: center;
+       justify-content: center;
+       z-index: 6;
+       height: 1rem;
+
+                }
+
+     @media (min-width: 600px) { 
+      #nav-mobile {
+        width: 50vw ;
+        right: -50vw;
+      }
+
+     }  
+                
+    @media (min-width: 1024px) { 
+      #nav-mobile, #button-open {
+        display: none;
+      }
+
+     }     
+       */       
+/* TOP -> BOTTOM */
+   
+    
+    #nav-mobile {@apply fixed h-screen all400 bg-main-100 text-white/80 z-10 grid ic overflow-hidden lg:hidden;  ;}
+ 
+    /* RIGHT LEFT  */
+    #nav-mobile.navrl           { @apply: top-0 -right-80% w-80% md:-right-60% md:w-50vw  ; }
+    #nav-mobile.navrl.visible   { @apply top-0 right-0 ; }
+    /* TOP BOTTOM */
+    #nav-mobile.navtopb           { @apply left-0 -top-full w-full  ; }
+    #nav-mobile.navtopb.visible   { @apply left-0 top-0  ; }
+    /* LEFT RIGHT   */
+    #nav-mobile.navleft         { @apply: top-0 -left-80% w-80% md:-left-60% md:w-50vw  ; }
+    #nav-mobile.navleft.visible { @apply top-0 left-0 ; }
+
+
+
+    #button-open {@apply lg:hidden bg-main-100 h-16 px-2 text-soft-10 text-6 pb-1 ;}
+
+    .mobile-menu a{ @apply text-soft-10 hover:opacity-8 ;} 
+
+
+
+ 
+ </style>
+
+
+<script>
+    const btnOpen: HTMLElement | null = document.querySelector("#button-open");
+    const navMobile: HTMLElement | null = document.querySelector("#nav-mobile");
+
+    function openMenuMob() {
+      if (navMobile) {
+        navMobile.classList.toggle("visible");
+      }
+    }
+
+    function closeMenuMob() {
+      if (navMobile) {
+        navMobile.classList.remove("visible");
+      }
+    }
+
+    if (btnOpen) {
+      btnOpen.addEventListener("click", openMenuMob);
+    }
+
+    if (navMobile) {
+      navMobile.addEventListener("click", () => { closeMenuMob();});
+    }
+</script>

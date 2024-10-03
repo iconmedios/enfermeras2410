@@ -1,0 +1,14 @@
+---
+import { servicios } from "@lib/menus.json"
+
+
+
+const { class: className, ...props } = Astro.props;
+
+---
+<ul class:list={[className]} {...props} >
+    {servicios.map( ({title, link })=> (
+        <li><a href={link}>{title}</a></li> 
+     ))}
+</ul>
+

@@ -1,0 +1,88 @@
+---
+import CloseIcon from "./icons/CloseIcon.astro";
+import WhatsappBurp from "./icons/WhatsappBurp.astro";
+import { whatsapp } from "@lib/site.json"
+
+
+const chatItems = [
+  { title: "ENFERMERAS",     url:whatsapp[0].url, phone:whatsapp[0].name},
+  { title: "CUIDADORAS",          url:whatsapp[0].url, phone:whatsapp[0].name},
+];
+
+
+---
+
+<div id="ventana-chat-whatsapp">
+    
+    <h5 class="flex justify-between items-center">Iniciar conversación  <span> <icon class="inline w-8" name="arrow-back" /> </span> </h5>
+    <p>Normalmente respondemos en menos de 5 minutos </p>
+    <div> 
+        {
+            chatItems.map(({ title, url}) => (
+            <a href={url} title={title} target="_blank" ><span><icon class="w-6 inline text-green-600 " name="whatsapp-line" /></span> {title} </a>
+            )
+        )}
+    
+    </div>
+    <p class="text-gray/80">iconmedios</p>
+</div>
+
+
+<button id="btn-chat-whatsapp">
+    <WhatsappBurp class="whc-icon text-16 w-16" />
+    <CloseIcon class="whc-close p-2 text-white text-16 " /> 
+    
+</button>
+
+
+<script>
+    const ChatWhatsapp = document.querySelector("#ventana-chat-whatsapp") as HTMLElement;    
+    const BtnChatWhatsapp = document.querySelector("#btn-chat-whatsapp") as HTMLElement;    
+    const activaChatWhatsapp = ()=> {
+            ChatWhatsapp.classList.toggle("chat-activo")
+            BtnChatWhatsapp.classList.toggle("chat-activo")
+        }
+    BtnChatWhatsapp.addEventListener("click", activaChatWhatsapp);
+    // Cerrar al dar clink en toda la ventana o a un link
+    ChatWhatsapp.onclick = ()=>{
+            ChatWhatsapp.classList.remove("chat-activo")
+            BtnChatWhatsapp.classList.remove("chat-activo")
+        }		
+</script>
+
+
+<style>
+    #btn-chat-whatsapp{
+        @apply fixed right-8 bottom-16 z-40 rounded-full transition-all ease-in-out duration-300 ;
+    }
+    #btn-chat-whatsapp.chat-activo .whc-icon{
+        @apply hidden;
+    }
+    #btn-chat-whatsapp .whc-close{
+        @apply hidden;
+    }
+    #btn-chat-whatsapp.chat-activo{
+        @apply bg-green-600 ;
+    }
+    #btn-chat-whatsapp.chat-activo .whc-close{
+        @apply flex;
+    }
+    #ventana-chat-whatsapp{
+        @apply fixed invisible opacity-25 w-64 rounded-lg right-5 bottom-0 transition-all ease-in-out duration-300 bg-zinc-200 z-30 ;
+    }
+    #ventana-chat-whatsapp.chat-activo{
+        @apply bottom-32 visible opacity-100 duration-500;
+    }
+    #ventana-chat-whatsapp div{
+        @apply grid gap-1 px-4 ;
+    }
+    #ventana-chat-whatsapp h5{
+        @apply  bg-green-600 text-zinc-50 text-center p-4 rounded-t-lg uppercase ;
+    }
+    #ventana-chat-whatsapp a{
+        @apply bg-white block p-4 hover:bg-neutral-100 border-2 hover:text-green-600 ;
+    }
+    #ventana-chat-whatsapp p{
+        @apply text-sm px-6 py-4 text-center ;
+    }
+</style>
