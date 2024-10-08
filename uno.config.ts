@@ -43,7 +43,10 @@ export default defineConfig({
         "icb"            : "items-center justify-between",
         "all300"         : "transition-all ease-in-out duration-300",
         "all600"         : "transition-all ease-in-out duration-600",
-    },
+        "btround"        : "border-2 rounded-full ",
+        "btnbr"        : "border-brand-300 bg-brand-400 hover:bg-brand-500 text-white hover:text-white/80",
+        "btn-md":"px-5 py-3"
+      },
     
     transformers: [
         transformerDirectives(),

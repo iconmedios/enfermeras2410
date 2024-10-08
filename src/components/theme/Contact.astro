@@ -1,0 +1,12 @@
+---
+import { site, contact } from "@lib/site.json"
+import IcOutlinePhone from '@components/icons/IcOutlinePhone.astro';
+const { class: className, ...props } = Astro.props;
+
+---
+<div class:list={["all300 gap-4", className]} {...props}>
+    <a class="flex ic gap-2 hover:opacity-70" href={contact[0].url }> 
+      <span class="text-5 rounded-full btnbr p-2  "><IcOutlinePhone /></span>
+      {contact[0].name}</a>
+    <a class="btnbr btround p-2 px-4 inline" href="#contacto" >CONTACTO</a>
+</div>

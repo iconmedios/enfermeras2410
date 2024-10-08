@@ -1,100 +1,49 @@
 ---
+import ContactIcons from '@components/ContactIcons.astro';
 import MainMenu from '@components/theme/Menu.astro';
 
+
 ---
-<button id="button-open" >☰ </button>
-<section id="nav-mobile" class="navleft ">    
-    <div class="p-6">
-        
-        <MainMenu class="mobile-menu" />   
-    
+<button id="button-open" class="text-xl mr-6 relative z-10">☰</button>
+<section id="nav-mobile" class="navrl">    
+    <div class="relative grid gap-6 text-center z-8 icc ">
+      
+        <MainMenu class="mobilelinks " />   
   
-        <a class="block pt-6 right-4" href="/"> AVISO DE PRIVACIDAD</a>
+        <a class="right-4" href="/"> AVISO DE PRIVACIDAD</a>
+
+        <ContactIcons class="flex ic gap-2 text-6" />
     </div>
  
 </section>
 
-<style>
+<style is:global>
+
+ #nav-mobile {@apply fixed h-screen all300 bg-brand-400 text-white  z-6 grid ic overflow-hidden lg:hidden;  ;}
  
+ /* RIGHT LEFT  */
+ #nav-mobile.navrl           { @apply: top-0 -right-80% w-80% md:-right-60% md:w-50vw  ; }
+ #nav-mobile.navrl.visible   { @apply top-0 right-0 ; }
+ /* TOP BOTTOM */
+ #nav-mobile.navtopb           { @apply left-0 -top-full w-full  ; }
+ #nav-mobile.navtopb.visible   { @apply left-0 top-0  ; }
+ /* LEFT RIGHT   */
+ #nav-mobile.navleft         { @apply: top-0 -left-80% w-80% md:-left-60% md:w-50vw  ; }
+ #nav-mobile.navleft.visible { @apply top-0 left-0 ; }
 
-/* RIGHT - LEFT 
-    #nav-mobile {s
-    position: fixed;
-    display: grid;
-    align-items: center; 
-    height: 100vh;
-    width: 80vw ;
-    right: -80vw;
-    top: 0;
-    z-index: 5;
-    overflow: hidden;
-    font-size: 24px;
-   }
-   
-    #nav-mobile.visible {
+ #button-open {@apply z-99 lg:hidden text-brand-100 text-8 pt-0 ;}
+ #button-open.open{@apply text-orange ;}
 
-    right: 0;
-  
-    }
-
-
-    #nav-mobile .content{
-      padding: var(--fs-1);
-    }
-
-   
-
-    
-    #button-open {
-
-       display: grid;
-       align-items: center;
-       justify-content: center;
-       z-index: 6;
-       height: 1rem;
-
-                }
-
-     @media (min-width: 600px) { 
-      #nav-mobile {
-        width: 50vw ;
-        right: -50vw;
-      }
-
-     }  
-                
-    @media (min-width: 1024px) { 
-      #nav-mobile, #button-open {
-        display: none;
-      }
-
-     }     
-       */       
-/* TOP -> BOTTOM */
-   
-    
-    #nav-mobile {@apply fixed h-screen all400 bg-main-100 text-white/80 z-10 grid ic overflow-hidden lg:hidden;  ;}
- 
-    /* RIGHT LEFT  */
-    #nav-mobile.navrl           { @apply: top-0 -right-80% w-80% md:-right-60% md:w-50vw  ; }
-    #nav-mobile.navrl.visible   { @apply top-0 right-0 ; }
-    /* TOP BOTTOM */
-    #nav-mobile.navtopb           { @apply left-0 -top-full w-full  ; }
-    #nav-mobile.navtopb.visible   { @apply left-0 top-0  ; }
-    /* LEFT RIGHT   */
-    #nav-mobile.navleft         { @apply: top-0 -left-80% w-80% md:-left-60% md:w-50vw  ; }
-    #nav-mobile.navleft.visible { @apply top-0 left-0 ; }
-
-
-
-    #button-open {@apply lg:hidden bg-main-100 h-16 px-2 text-soft-10 text-6 pb-1 ;}
-
-    .mobile-menu a{ @apply text-soft-10 hover:opacity-8 ;} 
-
-
-
+ #nav-mobile .mobilelinks {@apply  text-left   ;}
+ #nav-mobile .mobilelinks a{@apply  text-6 hover:opacity-6;}
+ #nav-mobile .mobilelinks a.active {@apply text-brand-100 ;}
  
  </style>
+
+
+
+
+ 
 
 
 <script>
@@ -104,6 +53,11 @@ import MainMenu from '@components/theme/Menu.astro';
     function openMenuMob() {
       if (navMobile) {
         navMobile.classList.toggle("visible");
+        
+      }
+      if (btnOpen) {
+        btnOpen.classList.toggle("open");
+        
       }
     }
 
@@ -118,6 +72,8 @@ import MainMenu from '@components/theme/Menu.astro';
     }
 
     if (navMobile) {
-      navMobile.addEventListener("click", () => { closeMenuMob();});
+      navMobile.addEventListener("click", () => {
+        closeMenuMob();
+      });
     }
 </script>

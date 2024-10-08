@@ -6,6 +6,7 @@ import Link from '../base/LinkFooter.astro';
 import { site } from "@lib/site.json"
 
 import ContactIcons from "@components/ContactIcons.astro";
+import Contact from "./Contact.astro";
 
 
 ---
@@ -24,13 +25,9 @@ import ContactIcons from "@components/ContactIcons.astro";
             <div>
                 <h6 class="pb-8">Acerca de</h6>
                 <ul>
-                    {
-                        main.map( ({title, link })=> (
-                            
+                    {  main.map( ({title, link })=> (    
                         <li><Link href={link}>{title}</Link></li>
-                        
-                        ))
-                    }
+                    ))}
                 </ul>
                 <ContactIcons class="flex mt-8 gap-2 text-8" />
                 <p class="mt-9"> {site[0].address} </p>
@@ -39,27 +36,14 @@ import ContactIcons from "@components/ContactIcons.astro";
             <div>
                 <h6 class="pb-8">Servicios</h6>
                 <ul>
-                    {
-                         servicios.map( ({title, link })=> (
-                            
-                        <li><Link href={link}>{title}</Link></li>
-                        
-                        ))
-                    }
+                    {servicios.map( ({title, link })=> (  
+                    <li><Link href={link}>{title}</Link></li> ))}
                 </ul>
-               
-               
+                <Contact class="flex flex-col mt-8 items-initial" />
             </div>
             <div class=" ">
                 <h6 class="pb-8">Contacto</h6>
                 <ContacForm />
-               
-               
-<!--                   
-                <p> Tel: (33) 3366.6920</p>
-                <h6 class="hx4 pb-4">Descarga</h6>
-                <DescargaPres />
-                <Social class="social-footer" /> -->
 
                
             </div>

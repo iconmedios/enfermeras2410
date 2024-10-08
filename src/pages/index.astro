@@ -1,8 +1,10 @@
 ---
 import LayoutHome from "@layouts/LayoutHome.astro";
-import { site } from "@lib/site.json"
+import { site, contact } from "@lib/site.json"
 import { servicios } from "@lib/menus.json"
 import {cover, info } from '@lib/images'
+import IcOutlinePhone from '@components/icons/IcOutlinePhone.astro';
+import Contact from "@components/theme/Contact.astro";
 
 
 const title = site[0].sitename
@@ -33,6 +35,8 @@ const seo = {
             <h3>Cuidadoras</h3>
             <p>Aseo del paciente y su medicación vía oral, manejo de oxígeno y todos los cuidados generales.</p>
           </div>
+        
+        <Contact class="flex" />
           
         </div>
       </div>

@@ -3,7 +3,7 @@ import { site } from "@lib/site.json"
 const data= site[0]
 const { class: className, ...props } = Astro.props;
 ---
-<a href={data.domain} class:list={["flex ic gap-2", className]} {...props}>
+<a href="/" class:list={["flex ic gap-2", className]} {...props}>
         <img src="/assets/images/enfermeras-logo.webp" alt={data.sitename} width="100">
 </a>
 
