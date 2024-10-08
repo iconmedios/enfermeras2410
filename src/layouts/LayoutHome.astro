@@ -19,14 +19,14 @@ const { seo, titlepage, subtitle, bgimg } = Astro.props as Props;
 
 	
 		<div class="container flex icc relative z-8 min-h-90vh ">
-            <div class=" text-center w-80% ">
+            <div class=" text-center lg:w-80% ">
 				<div class="grid icc ">
 					<Contact class=" flex md:hidden mb-8" />
 				</div>
 				
                 <h1 class="text-6 md:text-10 lg:text-12 xl:text-16 leading-1.2em ">{titlepage}</h1>
                 {subtitle && <p class="my-8">{subtitle}</p>}
-				<a href="#acerca" class="btnbr btround btn-md">CUIDAMOS LO QUE MÁS AMAS</a>
+				<a href="#acerca" class="btnbr btround btn-md text-4 inline-block ">CUIDAMOS LO QUE MÁS AMAS</a>
             </div>
 				
 		</div>
